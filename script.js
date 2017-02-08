@@ -1,4 +1,8 @@
+// Globale variable 'calcu'. Wordt gebruikt om de variable properties te geven o.i.d
+
 var calcu = {};
+
+// Javascript voor Rekenmachine
 
 calcu.init = function () {
     calcu.opr = "",
@@ -12,6 +16,8 @@ calcu.init = function () {
     calcu.screen.innerText = "0";
 }
 
+// Onthoud Rekenmachine input
+
 calcu.storeInput = function () {
     if (calcu.input !== ""){
         if (calcu.firstNum === "") {
@@ -21,10 +27,14 @@ calcu.storeInput = function () {
     }
 }
 
+// Refresh Rekenmachine input. Dus je kan opnieuw een som invoeren.
+
 calcu.clearInput = function () {
     calcu.input = "";
     calcu.hasDecimal = false;
 }
+
+// Reken het antwoord uit
 
 calcu.calculate = function () {
     switch (calcu.opr) {
@@ -42,6 +52,8 @@ calcu.calculate = function () {
             break;
     }
 }
+
+// Funtie om op de buttons te klikken (en wat het doet)
 
 calcu.buttonClick = function (button) {
     if (button === "C" || button === "=" || button === "*" || button === "/" || button === "+" || button === "-") {
@@ -81,6 +93,8 @@ calcu.buttonClick = function (button) {
     if(calcu.input !== ""){
         calcu.screen.innerText = calcu.input;
     } else calcu.screen.innerText = +(Number(calcu.firstNum)).toFixed(9);
+
+  // Laten we de gehele functie loggen
 
     console.log(calcu);
 }
